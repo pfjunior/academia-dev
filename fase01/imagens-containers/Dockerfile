@@ -1,7 +1,8 @@
 FROM buildpack-deps:buster-scm
 
-# RUN echo "Olá mundo, seja bem vindo ao Docker"
+ADD ./docker-definitivo.sh ./docker-definitivo.sh
 
-ENTRYPOINT [ "echo" ]
+RUN chmod +x /docker-definitivo.sh
 
-CMD [ "Olá mundo, seja bem vindo ao Docker" ]
+ENTRYPOINT [ "./docker-definitivo.sh" ]
+
