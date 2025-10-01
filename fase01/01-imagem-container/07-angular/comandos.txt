@@ -1,7 +1,17 @@
-docker run -it -v "/home/junior/dev/labs/academia-dev/fase01/01-imagem-container/07-angular/temp/":/app --entrypoint sh node:22-alpine
+docker run -it -v /home/junior/dev/labs/academia-dev/fase01/01-imagem-container/07-angular/demo:/app --entrypoint sh node:22-alpine
+
+cd app
 
 npm install -g @angular/cli
 
 ng new app
 
-docker run -it --rm -v "/home/junior/dev/labs/academia-dev/fase01/01-imagem-container/07-angular/temp/app":/usr/share/nginx/html -p 80:80 nginx
+cd app
+
+sudo chmod -R u+rwX .
+
+sudo chown -R $USER:$USER .
+
+ng build
+
+docker run -it -d --rm -v /home/junior/dev/labs/academia-dev/fase01/01-imagem-container/07-angular/demo/app/dist/app/browser:/usr/share/nginx/html -p 80:80 nginx
