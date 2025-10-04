@@ -1,4 +1,8 @@
+- wsl
 docker run -it -v /home/junior/dev/labs/academia-dev/fase01/01-imagem-container/07-angular/demo:/app --entrypoint sh node:22-alpine
+
+- linux
+docker run -it -v /home/pjunior/dev/labs/academia-dev/fase01/01-imagem-container/08-angular-multistage-build:/app --entrypoint sh node:22-alpine
 
 cd app
 
