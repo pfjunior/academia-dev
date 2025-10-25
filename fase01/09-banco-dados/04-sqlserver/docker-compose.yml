@@ -1,0 +1,22 @@
+services:
+  sqlserver_service_blablabla:
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=pass@USER123
+      - MSSQL_PID=Developer
+    ports:
+      - 1433:1433
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+      # - ./scripts:/docker-entrypoint-initdb.d
+    networks:
+      - db
+
+volumes:
+  sqlserver_data:
+    driver: local
+
+networks:
+  db:
+    driver: bridge

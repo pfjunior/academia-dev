@@ -1,0 +1,25 @@
+services:
+  sqlserver_service_blablabla:
+    image: luizcarlosfaria/mssql-server-linux:2019-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=pass@SA123
+      - MSSQL_PID=Developer
+      - MSSQL_DATABASE=DockerDefinitivo
+      - MSSQL_USER=app01
+      - MSSQL_PASSWORD=pass@APP01
+    ports:
+      - 1433:1433
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+      - ./scripts:/docker-entrypoint-initdb.d
+    networks:
+      - db
+
+volumes:
+  sqlserver_data:
+    driver: local
+
+networks:
+  db:
+    driver: bridge
