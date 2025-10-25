@@ -1,0 +1,7 @@
+https://www.oracle.com/database/technologies/appdev/sql-developer.html
+
+Comando para habilitar a criação de usuário via linha de comando alter session set "_ORACLE_SCRIPT"=true;
+
+https://github.com/oracle/docker-images/tree/main/OracleDatabase
+
+https://github.com/oracle/docker-images/blob/main/OracleDatabase/SingleInstance/README.md
