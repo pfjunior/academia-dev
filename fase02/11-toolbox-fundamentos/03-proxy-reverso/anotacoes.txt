@@ -1,0 +1,14 @@
+Aqui temos um exemplo de código que usa cache. Nesse caso estamos falando de .NET Core, e um memory cache.
+
+Os blocos estão numerados para que seja possível referenciar aqui no texto cada um desses elementos.
+
+No bloco 1, temos a criação da chave de cache. Essa chave é única para essa sequencia de parâmetros.
+
+No bloco 2, estamos avaliando se há um bypass explícito (bool cached) ou se o dado está cacheado (com base na chave). Esse método TryGetValue ao mesmo que informa se o dado está no cache, faz obtenção do dado cacheado.
+
+No bloco 3, vemos a produção do dado que precisa ser cacheado. Isso só acontece quando o dado não está no cache, e portanto precisamos acessar o recurso de alta latência para de fato obter esse dado pelas vias normais.
+
+No bloco 4, vemos como armazenar o dado que acabamos de obter do modo lento, no cache. Definimos um tempo de vida para o cache (SetAbsoluteExpiration).
+
+No bloco 5, retornamos o dado para quem o requisitou. Não importa se o dado veio do cache ou não.
+
