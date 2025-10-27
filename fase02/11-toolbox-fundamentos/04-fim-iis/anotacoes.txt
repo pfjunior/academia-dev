@@ -1,0 +1,7 @@
+O fim do IIS
+Talvez você esteja acostumado com o Internet Information Services, talvez conheça-o, assim como eu, desde o tempo do Personal Web Server. Entre amor e ódio o IIS ajudou muita gente, mas seus dias de apogeu estão chegando ao fim.
+
+TL;DR;
+IIS morreu ou vai morrer? Não! Mas você precisa abrir os olhos para outras possibilidades, cada vez mais .NET se desconecta do IIS.
+
+https://gago.io/blog/o-fim-do-iis/
