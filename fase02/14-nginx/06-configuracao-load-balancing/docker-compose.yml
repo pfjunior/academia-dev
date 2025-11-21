@@ -1,0 +1,34 @@
+services:
+  edge-proxy:
+    image: nginx:1.29.3    
+    volumes:
+    - ./nginx/conf.d/:/etc/nginx/conf.d/
+    ports:
+      - 80:8080
+
+  localhost1_1:
+    image: pfjunior89/route-troubleshooting-api
+    hostname: istancia1
+    environment:
+      - APP_NAME=localhost1_instancia1
+    networks:
+      - edge
+
+  localhost1_2:
+    image: pfjunior89/route-troubleshooting-api
+    hostname: istancia2
+    environment:
+      - APP_NAME=localhost1_instancia2
+    networks:
+      - edge
+
+  localhost2:
+    image: pfjunior89/route-troubleshooting-api
+    environment:
+      - APP_NAME=localhost2
+    networks:
+      - edge
+
+networks:
+  edge:
+    driver: bridge
